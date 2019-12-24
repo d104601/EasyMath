@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyMath</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="js/localforage.min.js"></script>
+<script src="signin.js"></script>
+
+<div class="core">
+    <h1>Welcome</h1>
+    <h2>Please select user.</h2>
+    <table style="margin-top: 10%;" style="text-align: center">
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td colspan="3">
+                <select class="form-control" id="userlist"></select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary setuser" data-toggle="modal" data-target="#adduser">Add user</button>
+            </td>
+            <td colspan="2">
+                <button class="btn btn-primary setuser" id="deleteuser" onclick="deleteuser()">Delete user</button>
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        <button class="btn btn-primary btn-lg" id="startbutton" onclick="signin()">Sign in</button>
+    </div>
+
+    <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add user</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Enter the user name you want</p>
+                    <input type="text" class="form-control" id="enterusername" placeholder="User Name" required>
+                    <div id="invalid" class="invalid-feedback">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="register()">Add user</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeregister()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var temp;
+    var option;
+    var selection = document.getElementById('userlist');
+    for(var i = 0; i<localStorage.length; i++)
+    {
+        temp = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        option = document.createElement("option");
+
+        if(temp.username)
+        {
+            option.text=temp.username;
+            selection.add(option);
+        }
+        else
+        {}
+    }
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyMath - Practice</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script src="../signout.js"></script>
+
+<div class="core">
+    <button class="btn btn-dark" onclick="signout()">Sign Out</button> Hello, <span id="username"></span>.
+
+    <div>
+        <a href="../main.html">Main Menu</a> >> Math Practice
+    </div>
+    <h1>Math Practice</h1>
+    <p>Math Practice has practice problems on the most important skills for learning or preparing for algebra.
+        To get started, click any of the subjects below.</p>
+
+    <div class="Topic">
+        <table style="text-align: center">
+                <tr>
+                    <th><h2>Basic Arithmetic</h2></th>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-lg btn-primary btn-block" href="practiceAddition.html">Addition</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-lg btn-primary btn-block" href="practiceSubtraction.html">Subtraction</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-lg btn-primary btn-block" href="practiceMultiplication.html">Multiplication</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-lg btn-primary btn-block" href="printableDivision.html">Division</a></td>
+                </tr>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var curruser = JSON.parse(localStorage.getItem('currUser')).currUser;
+    document.getElementById('username').innerHTML = curruser;
+</script>
+</body>
+</html>

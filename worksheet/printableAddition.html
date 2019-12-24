@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Worksheet Generator - Addition</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+<script src="generateAddition.js"></script>
+<script src="generatePDF.js"></script>
+<script src="printNow.js"></script>
+<script src="saveAndLoad.js"></script>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script src="../js/bootstrap-input-spinner.js"></script>
+<script src="../js/jspdf.min.js"></script>
+<script src="../js/jspdf.plugin.autotable.js"></script>
+<script src="../js/localforage.min.js"></script>
+<script src="../signout.js"></script>
+
+<div class="core">
+    <button class="btn btn-dark" onclick="signout()">Sign Out</button> Hello, <span id="username"></span>.
+    <div>
+        <a href="../main.html">Main Menu</a> >>
+        <a href="makePrintable.html">Worksheet Generator</a> >> Addition
+    </div>
+
+    <h1>Math Worksheet Generator</h1>
+
+    <h2 id="currtopic">Addition</h2>
+    <h3>Option</h3>
+    <table class="table">
+        <tr>
+            <td>Title</td>
+            <td colspan="3"><input type="text" class="form-control" id="inputTitle" value="Addition"></td>
+        </tr>
+        <tr>
+            <td>Number of digits</td>
+            <td colspan="3"><input type="number" name="digits" id="digits" min="1" max="4" value="2"></td>
+        </tr>
+        <tr>
+            <td>Orientation</td>
+            <td colspan="3">
+                <select id="orientation" class="form-control">
+                    <option value="1">Horizontal</option>
+                    <option value="2">Vertical</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Number of problems</td>
+            <td colspan="3"><input type="number" name="numberOfProblems" id="numberOfProblems" min="5" max="40" value="10" step="5"></td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align: center"><input type=button class="btn btn-primary" value="Create Worksheet" onclick="generateProblems();"></td>
+        </tr>
+        <tr>
+            <td>Or load my saved worksheet</td>
+            <td>
+                <select id="savedWorksheet" class="form-control"></select>
+            </td>
+            <td style="width: 1%"> <button id="loadSaved" onclick="loadWorksheet()" class="btn btn-primary">Load</button></td>
+            <td style="width: 1%"> <button id="deleteSaved" class="btn btn-primary" onclick="deleteSaved()">Delete</button></td>
+        </tr>
+    </table>
+
+    <h3 hidden id="previewTitle">Preview</h3>
+    <button hidden id="genPDF" class="btn btn-primary" onclick="generatePDF()" >Download as PDF</button>
+    <button hidden id="printNow" class="btn btn-primary" onclick="printNow()" >Print Now</button>
+    <div hidden id="saveWorksheet">
+        <h4>Save this worksheet</h4>
+        <input  type="text" id="filename" class="form-control-sm" placeholder="File name">
+        <button class="btn btn-primary" id="saveButton" onclick="saveWorksheet()">Save</button>
+    </div>
+
+    <table class="table" id="preview">
+        <tbody id="printable">
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $("input[type='number']").inputSpinner();
+
+    var curruser = JSON.parse(localStorage.getItem('currUser')).currUser;
+    document.getElementById('username').innerHTML = curruser;
+</script>
+</body>
+</html>

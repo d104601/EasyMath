@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyMath</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="js/localforage.min.js"></script>
+<script src="signout.js"></script>
+
+<div class="core">
+    <h1>Good to see you. <span id="username"></span></h1>
+    <p>What do you want to do toady?</p>
+    <table>
+        <tr>
+            <td><a class="btn btn-primary btn-lg btn-block" href="webpractice/practicemain.html" >Math Practice</a></td>
+        </tr>
+        <tr>
+            <td><a class="btn btn-primary btn-lg btn-block" href="worksheet/makePrintable.html">Worksheet Generator</a></td>
+        </tr>
+        <tr>
+            <td><a class="btn btn-primary btn-lg btn-block" >Statistic</a></td>
+        </tr>
+    </table>
+
+    <p>
+        <button class="btn btn-dark" onclick="signout()">Sign Out</button>
+    </p>
+</div>
+
+<script type="text/javascript">
+    var curruser = JSON.parse(localStorage.getItem('currUser')).currUser;
+    document.getElementById('username').innerHTML = curruser;
+</script>
+</body>
+</html>

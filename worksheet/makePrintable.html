@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyMath</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script src="../signout.js"></script>
+
+<div class="core">
+    <button class="btn btn-dark" onclick="signout()">Sign Out</button> Hello, <span id="username"></span>.
+
+    <div>
+        <a href="../main.html">Main Menu</a> >> Worksheet Generator
+    </div>
+    <h1>Worksheet Generator</h1>
+    <p>Need to create a timed test or just want to print out some extra practice for your child or class?
+        Create endless addition, subtraction, multiplication, and division with our math worksheet generator.
+        Simply adjust the difficulty to match grade-level expectations for each skill, download, and print.</p>
+    <div class="Topic">
+        <table style="text-align: center">
+            <tr>
+                <td><a class="btn btn-lg btn-primary btn-block" href="printableAddition.html">Addition</a></td>
+            </tr>
+            <tr>
+                <td><a class="btn btn-lg btn-primary btn-block" href="printableSubtraction.html">Subtraction</a></td>
+            </tr>
+            <tr>
+                <td><a class="btn btn-lg btn-primary btn-block" href="printableMultiplication.html">Multiplication</a></td>
+            </tr>
+            <tr>
+                <td><a class="btn btn-lg btn-primary btn-block" href="printableDivision.html">Division</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var curruser = JSON.parse(localStorage.getItem('currUser')).currUser;
+    document.getElementById('username').innerHTML = curruser;
+</script>
+</body>
+</html>

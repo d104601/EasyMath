@@ -1,0 +1,70 @@
+body{
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1{
+    color: #00c4c9;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+#title {
+    font-size: 20pt;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.equation {
+    font-size: 20pt;
+    font-family: Times New Roman;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: #CCCCCC dashed 1px;
+}
+
+#result{
+    float:right;
+}
+
+.core{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+table{
+    margin: 0 auto;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.core{
+    width: 800px;
+    margin-top: 25px;
+}
+
+.setuser{
+    width: 120px;
+    margin-top: 10px;
+}
+
+input, select{
+    text-align: center;
+}
+
+#startbutton{
+    width: 20%;
+    margin-top: 20px;
+}
+
+.practiceTopic{
+    border: 1px solid;
+}
